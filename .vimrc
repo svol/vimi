@@ -1,7 +1,7 @@
 "=============================================================================
 " Description: Vimi bundle .vimrc
-" Author: Vyacheslav Oliyanchuk <miripiruni@gmail.com>
-" URL: http://github.com/miripiruni/vimi/
+" Original Author: Vyacheslav Oliyanchuk <miripiruni@gmail.com>
+" Original URL: http://github.com/miripiruni/vimi/
 "=============================================================================
 
 " Make Vim more useful
@@ -9,121 +9,142 @@ set nocompatible
 
 " Vundle setup
 " Plugin manager
+" git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 "
 " Brief help:
-" :BundleList          - list configured bundles
-" :BundleInstall(!)    - install(update) bundles
-" :BundleSearch(!) foo - search(or refresh cache first) for foo
-" :BundleClean(!)      - confirm(or auto-ap prove) removal of unused bundles
+" :PluginList          - list configured bundles
+" :PluginInstall(!)    - install(update) bundles
+" :PluginSearch(!) foo - search(or refresh cache first) for foo
+" :PluginClean(!)      - confirm(or auto-ap prove) removal of unused bundles
 " for more details see :h vundle  or https://github.com/gmarik/vundle
-    filetype off     " required!
-    set rtp+=~/.vimi/.vim/bundle/vundle/
+filetype off     " required!
+    set rtp+=~/.vim/bundle/vundle/
     call vundle#rc()
-    Bundle 'git://github.com/gmarik/vundle.git'
+    Plugin 'git://github.com/gmarik/vundle.git'
 
-    " Bundles
-    " NOTE: comments after Bundle command are not allowed...
+    " Plugins
+    " NOTE: comments after Plugin command are not allowed...
     "
     " Libs
         " For FuzzyFinder:
-        " Bundle 'L9'
+        " Plugin 'L9'
     " Interface
-        Bundle 'git://github.com/kien/ctrlp.vim.git'
+        Plugin 'git://github.com/kien/ctrlp.vim.git'
+        Plugin 'ruscmd'
         " Solarized Colorscheme
-        Bundle 'git://github.com/altercation/vim-colors-solarized.git'
-        Bundle 'git://github.com/gorodinskiy/vim-coloresque.git'
+        " Plugin 'git://github.com/gorodinskiy/vim-coloresque.git'
+        " Plugin 'sjl/badwolf'
+        " Plugin 'altercation/vim-colors-solarized'
+        Plugin 'tomasr/molokai'
+        " Plugin 'zaiste/Atom'
+        " Plugin 'w0ng/vim-hybrid'
+        " Plugin 'chriskempson/base16-vim'
+        " Plugin 'Elive/vim-colorscheme-elive'
+        " Plugin 'zeis/vim-kolor'
         " A tree explorer plugin
-        Bundle 'git://github.com/scrooloose/nerdtree.git'
+        Plugin 'git://github.com/scrooloose/nerdtree.git'
         " Perform all your vim insert mode completions with Tab
-        Bundle 'git://github.com/ervandew/supertab.git'
+        Plugin 'git://github.com/ervandew/supertab.git'
         " Command-T
-        " Bundle 'git://github.com/wincent/Command-T.git'
-        " Bundle 'git://github.com/vim-scripts/taglist.vim.git'
+        " Plugin 'git://github.com/wincent/Command-T.git'
+        " Plugin 'git://github.com/vim-scripts/taglist.vim.git'
         " Depends: http://ctags.sourceforge.net/
-        " Bundle 'git://github.com/int3/vim-taglist-plus.git'
+        " Plugin 'git://github.com/int3/vim-taglist-plus.git'
         " Shows 'Nth match out of M' at every search
-        Bundle 'git://github.com/vim-scripts/IndexedSearch.git'
-        " Bundle 'git://github.com/rphillips/vim-zoomwin.git'
-        Bundle 'git://github.com/mattn/emmet-vim.git'
+        Plugin 'git://github.com/vim-scripts/IndexedSearch.git'
+        " Plugin 'git://github.com/rphillips/vim-zoomwin.git'
+        Plugin 'git://github.com/mattn/emmet-vim.git'
         " TextMate-like snippets
-        Bundle 'git://github.com/vim-scripts/UltiSnips.git'
+        Plugin 'git://github.com/vim-scripts/UltiSnips.git'
         " TextMate-like snippets
-        " Bundle 'git://github.com/msanders/snipmate.vim.git'
+        " Plugin 'git://github.com/msanders/snipmate.vim.git'
         " Miripiruni's XSLT & CSS snippets
-        " Bundle 'git://github.com/miripiruni/vimi-snippets.git'
+        " Plugin 'git://github.com/miripiruni/vimi-snippets.git'
         " RegExp search
-        Bundle 'git://github.com/mileszs/ack.vim.git'
+        Plugin 'git://github.com/mileszs/ack.vim.git'
         " Provides easy code commenting
-        Bundle 'git://github.com/scrooloose/nerdcommenter.git'
+        Plugin 'git://github.com/scrooloose/nerdcommenter.git'
         " Mappings to easily delete, change and add surroundings in pairs
-        " Bundle 'git://github.com/tpope/vim-surround.git'
+        " Plugin 'git://github.com/tpope/vim-surround.git'
         " Git wrapper
-        " Bundle 'git://github.com/tpope/vim-fugitive.git'
-        " Bundle 'git://github.com/tsaleh/vim-align.git'
-        " Bundle 'git://github.com/vim-scripts/bufexplorer.zip.git'
+        " Plugin 'git://github.com/tpope/vim-fugitive.git'
+        " Plugin 'git://github.com/tsaleh/vim-align.git'
+        " Plugin 'git://github.com/vim-scripts/bufexplorer.zip.git'
         " Automatic closing of quotes, parenthesis, brackets, etc.
-        " Bundle 'git://github.com/vim-scripts/delimitMate.vim.git'
-        " Bundle 'git://github.com/sjl/gundo.vim.git'
-        " Bundle 'git://github.com/edsono/vim-matchit.git'
-        Bundle 'git://github.com/sjl/threesome.vim.git'
-        " Bundle 'git://github.com/chrismetcalf/vim-yankring.git'
-        " Bundle 'git://github.com/slack/vim-fuzzyfinder.git'
-        Bundle 'git://github.com/vim-scripts/vimwiki.git'
-        Bundle 'git://github.com/scrooloose/syntastic.git'
-        Bundle 'git://github.com/vim-scripts/TaskList.vim.git'
+        Plugin 'git://github.com/vim-scripts/delimitMate.vim.git'
+        " Plugin 'git://github.com/sjl/gundo.vim.git'
+        " Plugin 'git://github.com/edsono/vim-matchit.git'
+        Plugin 'git://github.com/sjl/threesome.vim.git'
+        " Plugin 'git://github.com/chrismetcalf/vim-yankring.git'
+        " Plugin 'git://github.com/slack/vim-fuzzyfinder.git'
+        " Plugin 'git://github.com/vim-scripts/vimwiki.git'
+        Plugin 'git://github.com/scrooloose/syntastic.git'
+        Plugin 'git://github.com/vim-scripts/TaskList.vim.git'
+        Plugin 'Yggdroot/indentLine'
+        Plugin 'bling/vim-airline'
     " Lua
-        " Bundle 'git://github.com/vim-scripts/lua.vim.git'
-        " Bundle 'git://github.com/rkowal/Lua-Omni-Vim-Completion.git'
-        " Bundle 'git://github.com/xolox/vim-lua-ftplugin.git'
-        " Bundle 'git://github.com/xolox/vim-lua-inspect.git'
+        " Plugin 'git://github.com/vim-scripts/lua.vim.git'
+        " Plugin 'git://github.com/rkowal/Lua-Omni-Vim-Completion.git'
+        " Plugin 'git://github.com/xolox/vim-lua-ftplugin.git'
+        " Plugin 'git://github.com/xolox/vim-lua-inspect.git'
     " HTML/HAML
         " HTML5 omnicomplete and syntax
-        Bundle 'git://github.com/othree/html5.vim.git'
-        Bundle 'git://github.com/hokaccha/vim-html5validator.git'
-        " Bundle 'git://github.com/tyru/operator-html-escape.vim.git'
+        Plugin 'git://github.com/othree/html5.vim.git'
+        Plugin 'git://github.com/hokaccha/vim-html5validator.git'
+        " Plugin 'git://github.com/tyru/operator-html-escape.vim.git'
         " Runtime files for Haml and Sass
-        Bundle 'git://github.com/tpope/vim-haml.git'
-        Bundle 'git://github.com/gregsexton/MatchTag.git'
+        " Plugin 'git://github.com/tpope/vim-haml.git'
+        Plugin 'git://github.com/gregsexton/MatchTag.git'
     " CSS/LESS
         " CSS3 syntax support
-        Bundle 'git://github.com/hail2u/vim-css3-syntax.git'
+        Plugin 'git://github.com/hail2u/vim-css3-syntax.git'
         " Highlight colors in css files
-        Bundle 'git://github.com/ap/vim-css-color.git'
-        Bundle 'git://github.com/groenewege/vim-less.git'
-        Bundle 'git://github.com/miripiruni/vim-better-css-indent.git'
-        Bundle 'git://github.com/miripiruni/CSScomb-for-Vim.git'
+        Plugin 'git://github.com/ap/vim-css-color.git'
+        " Plugin 'git://github.com/groenewege/vim-less.git'
+        Plugin 'git://github.com/miripiruni/vim-better-css-indent.git'
+        Plugin 'git://github.com/miripiruni/CSScomb-for-Vim.git'
     " JavaScript
         " Vastly improved vim's javascript indentation
-        Bundle 'git://github.com/pangloss/vim-javascript.git'
+        Plugin 'git://github.com/pangloss/vim-javascript.git'
         " Syntax for jQuery keywords and css selectors
-        Bundle 'git://github.com/itspriddle/vim-jquery.git'
+        Plugin 'git://github.com/itspriddle/vim-jquery.git'
         " CoffeeScript support
-        Bundle 'git://github.com/kchmck/vim-coffee-script.git'
-        Bundle 'git://github.com/walm/jshint.vim.git'
+        " Plugin 'git://github.com/kchmck/vim-coffee-script.git'
+        Plugin 'git://github.com/walm/jshint.vim.git'
     " JSON
-        Bundle 'git://github.com/leshill/vim-json.git'
+        Plugin 'git://github.com/leshill/vim-json.git'
     " PHP
-        Bundle 'git://github.com/vim-scripts/php.vim--Garvin.git'
-        Bundle 'git://github.com/2072/PHP-Indenting-for-VIm.git'
+        " Plugin 'git://github.com/vim-scripts/php.vim--Garvin.git'
+        " Plugin 'git://github.com/2072/PHP-Indenting-for-VIm.git'
     " Python/Django
-        "Bundle 'git://github.com/fs111/pydoc.vim.git'
+        "Plugin 'git://github.com/fs111/pydoc.vim.git'
     " Perl
-        Bundle 'git://github.com/petdance/vim-perl.git'
+        Plugin 'git://github.com/petdance/vim-perl.git'
     " Ruby/Rails
         " Editing and compiling Ruby
-        " Bundle 'git://github.com/vim-ruby/vim-ruby.git'
+        " Plugin 'git://github.com/vim-ruby/vim-ruby.git'
         " Rails support
-        " Bundle 'git://github.com/tpope/vim-rails.git'
+        " Plugin 'git://github.com/tpope/vim-rails.git'
         " Wisely add "end" in ruby, endfunction/endif/more
-        " Bundle 'git://github.com/tpope/vim-endwise.git'
+        " Plugin 'git://github.com/tpope/vim-endwise.git'
     " Jade
-        Bundle 'git://github.com/digitaltoad/vim-jade.git'
+        " Plugin 'git://github.com/digitaltoad/vim-jade.git'
     " Stylus
-        Bundle 'git://github.com/wavded/vim-stylus.git'
+        " Plugin 'git://github.com/wavded/vim-stylus.git'
+    " Scala
+        Plugin 'derekwyatt/vim-scala'
 
     filetype plugin indent on     " required!
 
-" Interface
+" Common settings
+    " Show line number
+    set number
+    set norelativenumber
+    " Minimal number of lines to keep above and below the cursor
+    " Typewriter mode = keep current line in the center 
+    set scrolloff=3
+    " Minimal number of lines to scroll when cursor gets off the screen
+    " set scrolljump=5
     " Character encoding used inside Vim
     " Only available when compiled with the +multi_byte feature
     set encoding=utf-8
@@ -150,18 +171,10 @@ set nocompatible
     set wildignore+=*.jpg,*.bmp,*.gif,*.png,*.jpeg
     " Set title of the window to filename [+=-] (path) - VIM
     " Only available when compiled with the +title feature
-    set title
-    " Show (partial) command in the last line of the screen
-    " Comment this line if your terminal is slow
-    " Only available when compiled with the +cmdline_info feature
+    " set title
     set showcmd
-    " Minimal number of lines to scroll when cursor gets off the screen
-    " set scrolljump=5
-    " Minimal number of lines to keep above and below the cursor
-    " Typewriter mode = keep current line in the center 
-    set scrolloff=999
     " Always show tabs
-    " set showtabline=2
+    set showtabline=2
     " Display invisible characters
     set list
     if version >= 700
@@ -181,11 +194,11 @@ set nocompatible
     " Number of column to be highlighted
     " Only available when compiled with the +syntax feature
     if version >= 703
-        set colorcolumn=80
+        set colorcolumn=120
     end
     " Maximum width of text that is being inserted
     " Longer lines will be broken after white space to get this width
-    set textwidth=80
+    set textwidth=120
     " Copy indent from current line when starting a new line
     set autoindent
     " Do smart indenting when starting a new line
@@ -231,16 +244,28 @@ set nocompatible
     set mousehide
     " Edit several files in the same time without having to save them
     set hidden
-
-    " No beeps, no flashes
+    " No beeps, 
     set visualbell
-    set t_vb=
+    " No flashes
+    "set t_vb=
     " List of directories which will be searched when using :find, gf, etc.
     " Search relative to the directory of the current file
     " Search in the current directory
     " Search downwards in a directory tree
     " Only available when compiled with the +path_extra feature
     set path=.,,**
+
+" Color theme
+    if has("syntax")
+        syntax on
+    endif
+
+    try
+        colorscheme molokai
+    catch /^Vim\%((\a\+)\)\=:E185/
+        echo "Molokai theme not found. Run :PluginInstall"
+    endtry
+
 
 " Status line
     function! FileSize()
@@ -358,7 +383,6 @@ set nocompatible
     " All matches in a line are substituted instead of one
     set gdefault
 
-
 " Шорткаты
     let mapleader = ","
 
@@ -402,7 +426,7 @@ set nocompatible
         " Switch type of line numbers
         " http://stackoverflow.com/questions/4387210/vim-how-to-map-two-tasks-under-one-shortcut-key
         " Vim 7.3 required
-        let g:relativenumber = 0
+        let g:relativenumber = 1
         function! ToogleRelativeNumber()
           if g:relativenumber == 0
             let g:relativenumber = 1
@@ -460,8 +484,8 @@ set nocompatible
         nnoremap Y y$
 
     " Pasting with correct indention
-        " nnoremap p p=`]
-        " nnoremap P P=`[
+        nnoremap p p=`]
+        nnoremap P P=`[
 
     " Disable <Arrow keys>
         " Warning: nightmare mode!
@@ -601,8 +625,8 @@ set nocompatible
         inoremap [<CR> [<CR>]<Esc>O
 
     " Fold with space
-        " nnoremap <Space> za
-        " vnoremap <Space> zf
+        nnoremap <Space> za
+        vnoremap <Space> zf
 
     " Switch tabs with <Tab>
         nnoremap <Tab> gt
@@ -610,7 +634,6 @@ set nocompatible
 
     " Ремапим русские символы
         " set langmap=ёйцукенгшщзхъфывапролджэячсмитьбюЁЙЦУКЕHГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮ;`qwertyuiop[]asdfghjkl\\;'zxcvbnm\\,.~QWERTYUIOP{}ASDFGHJKL:\\"ZXCVBNM<>
-
 
 " Environment
     " Store lots of history entries: :cmdline and search patterns
@@ -675,23 +698,6 @@ set nocompatible
 
 " Plugins
 
-    " Solarized
-        syntax enable
-        " http://stackoverflow.com/questions/7278267/incorrect-colors-with-vim-in-iterm2-using-solarized#comment11144700_7278548
-        let g:solarized_termcolors=16
-        set background=dark
-        try
-            colorscheme solarized
-        catch /^Vim\%((\a\+)\)\=:E185/
-            echo "Solarized theme not found. Run :BundleInstall"
-        endtry
-
-        try
-            call togglebg#map("<Leader>b")
-        catch /^Vim\%((\a\+)\)\=:E117/
-            " :(
-        endtry
-
     " NERDTree
         nnoremap <Bs> :<C-u>NERDTreeToggle<CR>
         let NERDTreeShowBookmarks=1
@@ -725,4 +731,16 @@ set nocompatible
         let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 
     " VimWiki
-        let g:vimwiki_list = [{'path': '~/Dropbox/vimwiki/'}]
+        "let g:vimwiki_list = [{'path': '~/Dropbox/vimwiki/'}]
+
+    " indentLine
+      set list lcs=tab:\|\
+      "let g:indentLine_color_term = 111
+      "let g:indentLine_color_gui = '#DADADA'
+      " let g:indentLine_char = 'c'
+      "let g:indentLine_char = '∙▹¦'
+      "let g:indentLine_char = '|'
+
+    " delimitMate
+      let delimitMate_expand_cr = 1
+
